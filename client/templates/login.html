@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head> 
+    <title> LOGIN</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="col-sm-8 col-sm-offset-2">
+        <h1>User Login Page</h1>
+        <div ng-show="message">
+            <div class="alert alert-success alert-dismissable">
+                <a href="#" class= "close" data-dismiss="alert" aria-label="close">&times;</a>
+                <h4><strong>{{message.title}}</strong></h4>
+                <p> {{message.template}}</p>
+            </div>
+        </div>
+        <hr>
+        <form name="myForm" novalidate>
+            <div class= "form-group" ng-class="{'has-error':'myForm.email.$touched'&& myForm.email.$invalid}">
+                <label for="email"> Email address</label>
+                <input type="email" name="email" ng-model="user.email" class="form-control" placeholder="email" required>
+                <small class="help-block" ng-show="myForm.email.$touched && myForm.email.$invalid"> Enter a valid email address</small>
+            </div>
+            <div class="form-group" ng-class="{'has-error':'myForm.password.$touched && myForm.password.$invalid'}">
+                <label for="password">Password</label>
+                <input type="password" name="password" ng-model="user.password" class ="form-control" placeholder="Password" required ng-minlength=6>
+                <small class="help-block" ng-show="myForm.password.$touched && myfrom.passoword.$error.minlength"> password id required of minimum 6 characters</small>
+            </div>
+                 <input class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="myForm.$invalid" ng-click="login()">
+
+
+        </form>
+        <hr>
+    </div>
+
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.26/ui-router-angularjs.min.js"></script>
+     </body>
+
+    
+    
+    
+    
+    
+
+</html>
+
+    
+    
+    
+
+</html>
